@@ -55,21 +55,21 @@ class Card extends Component {
             data-testid="attr1-card"
             className="attr"
           >
-            {cardAttr1}
+            {`Arremesso: ${cardAttr1}`}
           </p>
 
           <p
             data-testid="attr2-card"
             className="attr"
           >
-            {cardAttr2}
+            {`Passe: ${cardAttr2}`}
           </p>
 
           <p
             data-testid="attr3-card"
             className="attr"
           >
-            {cardAttr3}
+            {`Drible: ${cardAttr3}`}
           </p>
 
         </div>
