@@ -59,6 +59,7 @@ class Form extends Component {
             name="cardAttr1"
             id="number-input1"
             value={ cardAttr1 }
+            min="0"
             onChange={ onInputChange }
             placeholder="Atributo 1"
 
@@ -74,6 +75,7 @@ class Form extends Component {
             name="cardAttr2"
             id="number-input2"
             value={ cardAttr2 }
+            min="0"
             onChange={ onInputChange }
             placeholder="Atributo 2"
 
@@ -89,6 +91,7 @@ class Form extends Component {
             name="cardAttr3"
             id="number-input3"
             value={ cardAttr3 }
+            min="0"
             onChange={ onInputChange }
             placeholder="Atributo 3"
           />
@@ -138,7 +141,7 @@ class Form extends Component {
 
         <button
           data-testid="save-button"
-          type="submit"
+          type="button"
           id="save-button"
           disabled={ isSaveButtonDisabled }
           onClick={ onSaveButtonClick }

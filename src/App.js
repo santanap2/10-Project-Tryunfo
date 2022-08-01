@@ -15,14 +15,43 @@ class App extends React.Component {
       cardAttr3: '',
       cardImage: '',
       cardRare: '',
-      cardTrunfo: '',
+      cardTrunfo: false,
+      isButtonDisabled: true,
     };
   }
 
   onInputChange = ({ target }) => {
-    const { name, value } = target;
+    const checkboxOrNo = target.type === 'checkbox' ? target.checked : target.value;
     this.setState({
-      [name]: value,
+      [target.name]: checkboxOrNo,
+    }, () => this.isSaveButtonDisabled);
+  }
+
+  isSaveButtonDisabled = () => {
+    const {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+    } = this.state;
+
+    const maxAttr = 90;
+    const maxSum = 210;
+
+    const buttonIsDisabled = cardName.length === 0
+    || cardDescription.length === 0
+    || cardImage.length === 0
+    || cardRare.length === 0
+    || cardAttr1 > maxAttr
+    || cardAttr2 > maxAttr
+    || cardAttr3 > maxAttr
+    || cardAttr1 + cardAttr2 + cardAttr3 > maxSum;
+
+    this.setState({
+      isButtonDisabled: buttonIsDisabled,
     });
   }
 
@@ -44,6 +73,7 @@ class App extends React.Component {
 
         <Form
           onInputChange={ this.onInputChange }
+          isSaveButtonDisabled={ this.isSaveButtonDisabled }
         />
 
         <Card
