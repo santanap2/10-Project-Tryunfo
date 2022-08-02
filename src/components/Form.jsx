@@ -12,16 +12,18 @@ class Form extends Component {
       cardImage,
       cardRare,
       cardTrunfo,
-      // hasTrunfo,
+      hasTrunfo,
       isSaveButtonDisabled,
       onInputChange,
       onSaveButtonClick,
     } = this.props;
 
+    const isTrunfo = hasTrunfo;
+
     return (
       <form className="main-form">
 
-        <label htmlFor="name-input">
+        <label htmlFor="name-input" className="label-title">
           Nome da carta:
           <br />
           <input
@@ -29,19 +31,21 @@ class Form extends Component {
             type="text"
             name="cardName"
             id="name-input"
+            className="input"
             value={ cardName }
             onChange={ onInputChange }
             placeholder="Nome da carta"
           />
         </label>
 
-        <label htmlFor="description-input">
+        <label htmlFor="description-input" className="label-title">
           Descrição da carta:
           <br />
           <textarea
             data-testid="description-input"
             name="cardDescription"
             id="description-input"
+            className="input"
             cols="40"
             rows="5"
             value={ cardDescription }
@@ -50,7 +54,7 @@ class Form extends Component {
           />
         </label>
 
-        <label htmlFor="number-input1">
+        <label htmlFor="number-input1" className="label-title">
           Arremesso:
           <br />
           <input
@@ -58,6 +62,7 @@ class Form extends Component {
             type="number"
             name="cardAttr1"
             id="number-input1"
+            className="input"
             value={ cardAttr1 }
             min="0"
             onChange={ onInputChange }
@@ -66,7 +71,7 @@ class Form extends Component {
           />
         </label>
 
-        <label htmlFor="number-input2">
+        <label htmlFor="number-input2" className="label-title">
           Passe:
           <br />
           <input
@@ -74,6 +79,7 @@ class Form extends Component {
             type="number"
             name="cardAttr2"
             id="number-input2"
+            className="input"
             value={ cardAttr2 }
             min="0"
             onChange={ onInputChange }
@@ -82,7 +88,7 @@ class Form extends Component {
           />
         </label>
 
-        <label htmlFor="number-input3">
+        <label htmlFor="number-input3" className="label-title">
           Drible:
           <br />
           <input
@@ -90,6 +96,7 @@ class Form extends Component {
             type="number"
             name="cardAttr3"
             id="number-input3"
+            className="input"
             value={ cardAttr3 }
             min="0"
             onChange={ onInputChange }
@@ -97,7 +104,7 @@ class Form extends Component {
           />
         </label>
 
-        <label htmlFor="image-input">
+        <label htmlFor="image-input" className="label-title">
           Caminho da imagem:
           <br />
           <input
@@ -105,39 +112,46 @@ class Form extends Component {
             type="text"
             name="cardImage"
             id="image-input"
+            className="input"
             value={ cardImage }
             onChange={ onInputChange }
             placeholder="Caminho da imagem"
           />
         </label>
 
-        <label htmlFor="rare-input">
+        <label htmlFor="rare-input" className="label-title">
           Raridade:
           <br />
           <select
             data-testid="rare-input"
             name="cardRare"
             id="rare-input"
+            className="input"
             value={ cardRare }
             onChange={ onInputChange }
           >
             <option value="normal">Normal</option>
             <option value="raro">Raro</option>
-            <option value="muito raro">Muito Raro</option>
+            <option value="muito raro">Normal</option>
           </select>
         </label>
 
-        <label htmlFor="trunfo-input">
-          Super Trunfo
-          <input
-            data-testid="trunfo-input"
-            type="checkbox"
-            name="cardTrunfo"
-            id="trunfo-input"
-            checked={ cardTrunfo }
-            onChange={ onInputChange }
-          />
-        </label>
+        { isTrunfo ? (
+          <p className="label-title">Você já tem um Super Trunfo em seu baralho!</p>
+        ) : (
+          <label htmlFor="trunfo-input" className="label-title">
+            Super Trunfo
+            <input
+              data-testid="trunfo-input"
+              type="checkbox"
+              name="cardTrunfo"
+              id="trunfo-input"
+              className="checkbox"
+              checked={ cardTrunfo }
+              onChange={ onInputChange }
+            />
+          </label>
+        )}
 
         <button
           data-testid="save-button"
@@ -163,7 +177,7 @@ Form.propTypes = {
   cardImage: propTypes.string.isRequired,
   cardRare: propTypes.string.isRequired,
   cardTrunfo: propTypes.bool.isRequired,
-  // hasTrunfo: propTypes.bool.isRequired,
+  hasTrunfo: propTypes.bool.isRequired,
   isSaveButtonDisabled: propTypes.bool.isRequired,
   onInputChange: propTypes.func.isRequired,
   onSaveButtonClick: propTypes.func.isRequired,
