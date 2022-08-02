@@ -18,8 +18,6 @@ class Form extends Component {
       onSaveButtonClick,
     } = this.props;
 
-    console.log(this.props);
-
     return (
       <form className="main-form">
 
@@ -125,7 +123,7 @@ class Form extends Component {
           >
             <option value="normal">Normal</option>
             <option value="raro">Raro</option>
-            <option value="muito raro">Normal</option>
+            <option value="muito raro">Muito Raro</option>
           </select>
         </label>
 
@@ -143,7 +141,7 @@ class Form extends Component {
 
         <button
           data-testid="save-button"
-          type="button"
+          type="submit"
           id="save-button"
           disabled={ isSaveButtonDisabled }
           onClick={ onSaveButtonClick }

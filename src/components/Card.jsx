@@ -17,26 +17,6 @@ class Card extends Component {
     return (
       <div className="card">
 
-        { cardTrunfo ? <p data-testid="trunfo-card" id="trunfo">Super Trunfo</p> : '' }
-
-        <div className="title-rarity">
-
-          <h3
-            data-testid="name-card"
-            className="card-name"
-          >
-            { cardName }
-          </h3>
-
-          <p
-            data-testid="rare-card"
-            className="rarity"
-          >
-            { cardRare }
-          </p>
-
-        </div>
-
         <img
           data-testid="image-card"
           className="card-img"
@@ -45,7 +25,26 @@ class Card extends Component {
         />
 
         <p
+          data-testid="rare-card"
+          className="rarity"
+        >
+          { cardRare }
+        </p>
+
+        <div className="title-trunfo">
+
+          <h3
+            data-testid="name-card"
+            className="card-name"
+          >
+            { cardName }
+          </h3>
+
+        </div>
+
+        <p
           data-testid="description-card"
+          className="description"
         >
           {cardDescription}
         </p>
@@ -74,6 +73,7 @@ class Card extends Component {
 
         </div>
 
+        { cardTrunfo ? <p data-testid="trunfo-card" id="trunfo">Super Trunfo</p> : '' }
       </div>
     );
   }

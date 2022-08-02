@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(189, 224, 255);
+  background-color: rgb(220, 220, 220);
 }
 
 code {
@@ -14,7 +14,7 @@ code {
 }
 
 .main-title {
-  color: black;
+  color: red;
 }
 
 .main-form {
@@ -24,75 +24,85 @@ code {
 
 #save-button {
   width: 100px;
+  padding: 5px;
 }
 
 .card {
   margin: 20px;
-  padding: 10px;
-  background-color: aliceblue;
-  border: 2px red solid;
-  border-radius: 20px;
+  background-color:crimson;
+  color: white;
+  /* border: 1px black solid; */
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 320px;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.500);
-}
-
-#trunfo {
-  margin: 5px 0 0px 0;
-  padding: 10px;
-  width:100%;
-  border: red 2px solid;
-  background-color: rgb(211, 211, 211);
-}
-
-.title-rarity{
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 300px;
-  /* border: 2px red solid; */
-}
-
-.card-name{
-  font-size: 30px;
-}
-
-.rarity {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  background-color: rgb(0, 0, 0);
-  color: white;
-  border: red 2px solid;
-  border-radius: 100%;
-  width: 40px;
-  height: 40px;
+  width: 280px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0);
 }
 
 .card-img {
-  margin: 15px 0;
-  width: 300px;
-  border-radius: 15px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.500);
+  margin: 0;
+  width: 280px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.rarity {
+  margin: 0;
+  padding: 3px 0;
+  width: 280px;
+  background-color: rgb(0, 0, 0);
+  color: crimson;
+  font-weight: 700;
+}
+
+.title-trunfo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-name{
+  margin: 10px;
+  font-size: 30px;
+  padding: 15px 0 0 0;
+  text-shadow: 5px 5px 8px rgba(0, 0, 0)
+}
+
+.description {
+  padding: 0 20px;
+  text-align: center;
+  text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5)
 }
 
 .attr-div {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 280px;
   border-radius: 12px;
   /* border: red 1px solid; */
+  margin: 0 0 10px 0;
 }
 
 .attr {
-  margin: 5px;
-  padding: 5px;
-  background-color: rgba(0, 0, 0, 0.1);
-  border: red 2px solid;
-  border-radius: 10px;
+  margin: 1px 0;
+  padding: 5px 0;
+  width: 280px;
+  background-color: rgba(0, 0, 0, 0.3);  
 }
+
+#trunfo {
+  background-color: white;
+  color: crimson;
+  width: 280px;
+  margin: 0;
+  padding: 10px 0;
+  font-weight: 800;
+  font-size: 20px;
+  text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.3);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  }
