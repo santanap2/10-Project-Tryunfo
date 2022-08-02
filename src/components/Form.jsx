@@ -18,6 +18,8 @@ class Form extends Component {
       onSaveButtonClick,
     } = this.props;
 
+    console.log(this.props);
+
     return (
       <form className="main-form">
 
