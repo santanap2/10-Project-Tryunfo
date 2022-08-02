@@ -82,11 +82,12 @@ class App extends React.Component {
       savedCards: [...savedCards, cardInfo],
       cardName: '',
       cardDescription: '',
-      cardAttr1: '0',
-      cardAttr2: '0',
-      cardAttr3: '0',
+      cardAttr1: '',
+      cardAttr2: '',
+      cardAttr3: '',
       cardImage: '',
       cardRare: 'normal',
+      cardTrunfo: false,
     });
   }
 
@@ -107,6 +108,7 @@ class App extends React.Component {
       cardRare,
       cardTrunfo,
       isButtonDisabled,
+      savedCards,
     } = this.state;
 
     const displayCard = cardName
@@ -116,7 +118,6 @@ class App extends React.Component {
     || cardAttr3
     || cardAttr3
     || cardImage
-    // || cardRare
     || cardTrunfo;
 
     return (
@@ -156,7 +157,24 @@ class App extends React.Component {
           ) : (
             ''
           )}
+        </div>
 
+        <div className="card-pack">
+          <h1 className="pack-title">Baralho de cartas</h1>
+          <div className="cards">
+            { savedCards.map((card) => (
+              <Card
+                key={ card.name }
+                cardName={ card.name }
+                cardDescription={ card.description }
+                cardAttr1={ card.attr1 }
+                cardAttr2={ card.attr2 }
+                cardAttr3={ card.attr3 }
+                cardImage={ card.image }
+                cardRare={ card.rare }
+                cardTrunfo={ card.trunfo }
+              />))}
+          </div>
         </div>
 
       </div>

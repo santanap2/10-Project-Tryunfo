@@ -46,8 +46,7 @@ class Form extends Component {
             name="cardDescription"
             id="description-input"
             className="input"
-            cols="40"
-            rows="5"
+            maxLength="85"
             value={ cardDescription }
             onChange={ onInputChange }
             placeholder="Descrição da carta"
@@ -132,7 +131,7 @@ class Form extends Component {
           >
             <option value="normal">Normal</option>
             <option value="raro">Raro</option>
-            <option value="muito raro">Normal</option>
+            <option value="muito raro">Muito raro</option>
           </select>
         </label>
 
