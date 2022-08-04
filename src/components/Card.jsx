@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import propTypes from 'prop-types';
 
 class Card extends Component {
+  removeCard = (event) => {
+    console.log(event.target.name);
+  };
+
   render() {
     const {
       cardName,
@@ -46,7 +50,7 @@ class Card extends Component {
           data-testid="description-card"
           className="description"
         >
-          {cardDescription}
+          { cardDescription }
         </p>
 
         <div className="attr-div">
@@ -73,8 +77,9 @@ class Card extends Component {
 
         </div>
 
-        { cardTrunfo ? <p data-testid="trunfo-card" id="trunfo">Super Trunfo</p> : '' }
+        {cardTrunfo ? <p data-testid="trunfo-card" id="trunfo">Super Trunfo</p> : ''}
       </div>
+
     );
   }
 }

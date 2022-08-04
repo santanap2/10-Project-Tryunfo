@@ -152,6 +152,8 @@ code {
   width: 280px;
   max-width: 280px;
   max-height: 150px;
+  min-width: 279px;
+  min-height: 149px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
@@ -220,10 +222,9 @@ code {
 /* Estilização do baralho */
 .card-pack {
   margin: 50px;
-  /* padding: 50px 0; */
   background-color: rgb(255, 185, 199);
   border-radius: 20px;
-  width: 80%;
+  width: 70%;
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -235,6 +236,7 @@ code {
 
 .cards {
   margin: 50px 0;
+  padding: 0 10px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -254,4 +256,32 @@ code {
   padding: 10px;
   text-align: center;
   width: 100%;
+}
+
+.card-and-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+  width: 280px;
+  height: 515px;  
+  margin: 0 0 20px 0;
+}
+
+#delete-button {
+  width: 100px;
+  padding: 10px;
+  color: crimson;
+  font-size: 16px;
+  font-weight: 800;
+  border: none;
+  background-color: black;
+  border-radius: 10px;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.5);
+}
+
+#delete-button:hover {
+  background-color: crimson;
+  color: black;
 }
