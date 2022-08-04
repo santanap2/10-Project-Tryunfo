@@ -15,7 +15,6 @@ class App extends React.Component {
       cardTrunfo: false,
       isButtonDisabled: true,
       savedCards: [],
-      hasTrunfo: false,
     };
 
     removeCard = ({ target }) => {
